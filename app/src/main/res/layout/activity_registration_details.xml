@@ -4,7 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/registrationRoot"
     android:layout_width="match_parent"
+<<<<<<< HEAD
     android:layout_height="match_parent">
+=======
+    android:layout_height="match_parent"
+    >
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
 
     <ImageButton
         android:id="@+id/backButton"
@@ -19,6 +24,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+<<<<<<< HEAD
+=======
+        android:fontFamily="@font/inter"
+        android:includeFontPadding="false"
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
         android:id="@+id/brandTitle"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
@@ -41,6 +51,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/brandTitle">
 
+<<<<<<< HEAD
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -51,12 +62,28 @@
 
             <TextView
                 android:layout_width="match_parent"
+=======
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/registrationForm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:fontFamily="@font/inter"
+                android:includeFontPadding="false"
+                android:id="@+id/registrationTitle"
+                android:layout_width="0dp"
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:gravity="center"
                 android:text="@string/registration_title"
                 android:textColor="@color/white"
                 android:textSize="20sp"
+<<<<<<< HEAD
                 android:textStyle="bold" />
 
             <TextView
@@ -74,12 +101,43 @@
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
                 android:layout_marginTop="5dp"
+=======
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:fontFamily="@font/inter"
+                android:includeFontPadding="false"
+                android:id="@+id/nameLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:labelFor="@id/nameInput"
+                android:text="@string/name_label"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/registrationTitle" />
+
+            <EditText
+                android:fontFamily="@font/inter"
+                android:includeFontPadding="false"
+                android:id="@+id/nameInput"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="5dp"
+                android:autofillHints="name"
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
                 android:background="@drawable/bg_input"
                 android:inputType="textPersonName"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
                 android:singleLine="true"
                 android:textColor="@color/white"
+<<<<<<< HEAD
                 android:textSize="16sp" />
 
             <TextView
@@ -99,6 +157,41 @@
                 android:orientation="horizontal">
 
                 <RadioButton
+=======
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/nameLabel" />
+
+            <TextView
+                android:fontFamily="@font/inter"
+                android:includeFontPadding="false"
+                android:id="@+id/genderLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/gender_label"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/nameInput" />
+
+            <RadioGroup
+                android:id="@+id/genderGroup"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="5dp"
+                android:background="#292929"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/genderLabel">
+
+                <RadioButton
+                    android:fontFamily="@font/inter"
+                    android:includeFontPadding="false"
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
                     android:id="@+id/maleOption"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -112,6 +205,11 @@
                     android:textSize="14sp" />
 
                 <RadioButton
+<<<<<<< HEAD
+=======
+                    android:fontFamily="@font/inter"
+                    android:includeFontPadding="false"
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
                     android:id="@+id/femaleOption"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -125,6 +223,7 @@
             </RadioGroup>
 
             <TextView
+<<<<<<< HEAD
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -139,12 +238,37 @@
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
                 android:layout_marginTop="5dp"
+=======
+                android:fontFamily="@font/inter"
+                android:includeFontPadding="false"
+                android:id="@+id/registrationLoginLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:labelFor="@id/registrationLoginInput"
+                android:text="@string/login_label"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/genderGroup" />
+
+            <EditText
+                android:fontFamily="@font/inter"
+                android:includeFontPadding="false"
+                android:id="@+id/registrationLoginInput"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="5dp"
+                android:autofillHints="newUsername"
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
                 android:background="@drawable/bg_input"
                 android:inputType="text"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
                 android:singleLine="true"
                 android:textColor="@color/white"
+<<<<<<< HEAD
                 android:textSize="16sp" />
 
             <TextView
@@ -162,12 +286,43 @@
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
                 android:layout_marginTop="5dp"
+=======
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/registrationLoginLabel" />
+
+            <TextView
+                android:fontFamily="@font/inter"
+                android:includeFontPadding="false"
+                android:id="@+id/emailLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:labelFor="@id/emailInput"
+                android:text="@string/email_label"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/registrationLoginInput" />
+
+            <EditText
+                android:fontFamily="@font/inter"
+                android:includeFontPadding="false"
+                android:id="@+id/emailInput"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="5dp"
+                android:autofillHints="emailAddress"
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
                 android:background="@drawable/bg_input"
                 android:inputType="textEmailAddress"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
                 android:singleLine="true"
                 android:textColor="@color/white"
+<<<<<<< HEAD
                 android:textSize="16sp" />
 
             <TextView
@@ -182,13 +337,49 @@
                 android:id="@+id/birthDateField"
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
+=======
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/emailLabel" />
+
+            <TextView
+                android:fontFamily="@font/inter"
+                android:includeFontPadding="false"
+                android:id="@+id/birthDateLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/birth_date_label"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/emailInput" />
+
+            <FrameLayout
+                android:id="@+id/birthDateField"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
                 android:layout_marginTop="5dp"
                 android:background="@drawable/bg_input"
                 android:clickable="true"
                 android:contentDescription="@string/birth_date_action"
+<<<<<<< HEAD
                 android:focusable="true">
 
                 <TextView
+=======
+                android:focusable="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/birthDateLabel">
+
+                <TextView
+                    android:fontFamily="@font/inter"
+                    android:includeFontPadding="false"
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
                     android:id="@+id/birthDateText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -208,20 +399,40 @@
             </FrameLayout>
 
             <Button
+<<<<<<< HEAD
                 android:id="@+id/continueButton"
                 android:layout_width="match_parent"
+=======
+                android:fontFamily="@font/inter_medium"
+                android:includeFontPadding="false"
+                android:id="@+id/continueButton"
+                android:layout_width="0dp"
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
                 android:layout_height="48dp"
                 android:layout_marginTop="16dp"
                 android:enabled="false"
                 android:text="@string/continue_button"
                 android:textAllCaps="false"
                 android:textColor="@color/login_button_text"
+<<<<<<< HEAD
                 android:textSize="16sp"
                 app:backgroundTint="@color/login_button_tint"
                 app:cornerRadius="6dp" />
         </LinearLayout>
     </ScrollView>
 
+=======
+                android:textSize="15sp"
+                app:backgroundTint="@color/login_button_tint"
+        app:cornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/birthDateField" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
     <LinearLayout
         android:id="@+id/loginPrompt"
         android:layout_width="wrap_content"
@@ -231,22 +442,46 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+<<<<<<< HEAD
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+=======
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <TextView
+            android:fontFamily="@font/inter"
+            android:includeFontPadding="false"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:gravity="center_vertical"
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
             android:text="@string/already_registered"
             android:textColor="@color/white"
             android:textSize="14sp" />
 
         <TextView
+<<<<<<< HEAD
             android:id="@+id/signInLink"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:clickable="true"
             android:focusable="true"
+=======
+            android:fontFamily="@font/inter"
+            android:includeFontPadding="false"
+            android:id="@+id/signInLink"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginStart="4dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
             android:text="@string/sign_in_link"
             android:textColor="@color/accent_pink"
             android:textSize="14sp" />

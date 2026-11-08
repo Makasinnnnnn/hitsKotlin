@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?><!--
    Sample backup rules file; uncomment and customize as necessary.
    See https://developer.android.com/guide/topics/data/autobackup
@@ -11,3 +12,10 @@
    <exclude domain="sharedpref" path="device.xml"/>
 -->
 </full-backup-content>
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <exclude domain="sharedpref" path="session.xml" />
+    <exclude domain="database" path="." />
+</full-backup-content>
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080

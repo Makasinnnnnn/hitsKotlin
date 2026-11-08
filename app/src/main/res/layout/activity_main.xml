@@ -4,7 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
+<<<<<<< HEAD
     android:layout_height="match_parent">
+=======
+    android:layout_height="match_parent"
+    >
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
 
     <ImageButton
         android:id="@+id/backButton"
@@ -19,6 +24,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+<<<<<<< HEAD
+=======
+        android:fontFamily="@font/inter"
+        android:includeFontPadding="false"
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
         android:id="@+id/brandTitle"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
@@ -30,7 +40,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+<<<<<<< HEAD
     <TextView
+=======
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toTopOf="@id/registerPrompt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/brandTitle">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp">
+
+    <TextView
+        android:fontFamily="@font/inter"
+        android:includeFontPadding="false"
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
         android:id="@+id/loginTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,9 +72,17 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+<<<<<<< HEAD
         app:layout_constraintTop_toBottomOf="@id/brandTitle" />
 
     <TextView
+=======
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:fontFamily="@font/inter"
+        android:includeFontPadding="false"
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
         android:id="@+id/loginLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -52,11 +91,20 @@
         android:labelFor="@id/loginInput"
         android:text="@string/login_label"
         android:textColor="@color/white"
+<<<<<<< HEAD
         android:textSize="14sp"
+=======
+        android:textSize="15sp"
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/loginTitle" />
 
     <EditText
+<<<<<<< HEAD
+=======
+        android:fontFamily="@font/inter"
+        android:includeFontPadding="false"
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
         android:id="@+id/loginInput"
         android:autofillHints="username"
         android:layout_width="0dp"
@@ -70,12 +118,21 @@
         android:paddingEnd="12dp"
         android:singleLine="true"
         android:textColor="@color/white"
+<<<<<<< HEAD
         android:textSize="16sp"
+=======
+        android:textSize="15sp"
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/loginLabel" />
 
     <TextView
+<<<<<<< HEAD
+=======
+        android:fontFamily="@font/inter"
+        android:includeFontPadding="false"
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
         android:id="@+id/passwordLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -84,7 +141,11 @@
         android:labelFor="@id/passwordInput"
         android:text="@string/password_label"
         android:textColor="@color/white"
+<<<<<<< HEAD
         android:textSize="14sp"
+=======
+        android:textSize="15sp"
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/loginInput" />
 
@@ -101,6 +162,11 @@
         app:layout_constraintTop_toBottomOf="@id/passwordLabel">
 
         <EditText
+<<<<<<< HEAD
+=======
+            android:fontFamily="@font/inter"
+            android:includeFontPadding="false"
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
             android:id="@+id/passwordInput"
             android:autofillHints="password"
             android:layout_width="match_parent"
@@ -111,7 +177,11 @@
             android:paddingEnd="48dp"
             android:singleLine="true"
             android:textColor="@color/white"
+<<<<<<< HEAD
             android:textSize="16sp" />
+=======
+            android:textSize="15sp" />
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
 
         <ImageButton
             android:id="@+id/passwordVisibilityButton"
@@ -124,7 +194,30 @@
             android:src="@drawable/ic_visibility" />
     </FrameLayout>
 
+<<<<<<< HEAD
     <Button
+=======
+    <TextView
+        android:id="@+id/loginError"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/inter"
+        android:includeFontPadding="false"
+        android:textColor="#F05C44"
+        android:textSize="12sp"
+        android:visibility="gone"
+        android:accessibilityLiveRegion="polite"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/passwordContainer" />
+
+    <Button
+        android:fontFamily="@font/inter_medium"
+        android:includeFontPadding="false"
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
         android:id="@+id/loginButton"
         android:layout_width="0dp"
         android:layout_height="48dp"
@@ -135,6 +228,7 @@
         android:text="@string/login_button"
         android:textAllCaps="false"
         android:textColor="@color/login_button_text"
+<<<<<<< HEAD
         android:textSize="16sp"
         app:backgroundTint="@color/login_button_tint"
         app:cornerRadius="6dp"
@@ -143,6 +237,21 @@
         app:layout_constraintTop_toBottomOf="@id/passwordContainer" />
 
     <TextView
+=======
+        android:textSize="15sp"
+        app:backgroundTint="@color/login_button_tint"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loginError" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <TextView
+        android:fontFamily="@font/inter"
+        android:includeFontPadding="false"
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
         android:id="@+id/registerPrompt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.HitsKotlin" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:windowBackground">@color/screen_background</item>
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+=======
+<resources>
+    <style name="Base.Theme.HitsKotlin" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/screen_background</item>
+        <item name="android:fontFamily">@font/inter</item>
+        <item name="fontFamily">@font/inter</item>
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
     </style>
 </resources>

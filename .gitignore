@@ -13,3 +13,9 @@
 .externalNativeBuild
 .cxx
 local.properties
+<<<<<<< HEAD
+=======
+*.md
+/.idea/markdown.xml
+/.idea/inspectionProfiles/
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080

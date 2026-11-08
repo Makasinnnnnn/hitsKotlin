@@ -1,6 +1,20 @@
 package com.example.hitskotlin
 
 import android.app.DatePickerDialog
+<<<<<<< HEAD
+=======
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import androidx.lifecycle.Lifecycle
+import kotlinx.coroutines.launch
+import android.widget.Toast
+import com.example.hitskotlin.di.appContainer
+import com.example.hitskotlin.ui.viewmodel.RegistrationViewModel
+import com.example.hitskotlin.ui.openCatalog
+import com.example.hitskotlin.ui.model.RegistrationForm
+import android.content.Intent
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
 import android.os.Bundle
 import android.text.method.PasswordTransformationMethod
 import android.view.View
@@ -21,6 +35,12 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
 class RegistrationActivity : AppCompatActivity() {
+<<<<<<< HEAD
+=======
+    private val auth by lazy {
+        ViewModelProvider(this, appContainer.registrationFactory)[RegistrationViewModel::class.java]
+    }
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
     private var step = 1
     private var name = ""
     private var gender = "male"
@@ -53,6 +73,24 @@ class RegistrationActivity : AppCompatActivity() {
         })
 
         if (step == 2) showPassword() else showDetails()
+<<<<<<< HEAD
+=======
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                auth.state.collect { state ->
+                    findViewById<Button>(R.id.registerButton)?.let { button ->
+                        button.isEnabled = AuthCheck.canRegister(password, repeatedPassword) && !state.loading
+                        button.text = if (state.loading) "Регистрируем…" else "Зарегистрироваться"
+                    }
+                    state.error?.let {
+                        Toast.makeText(this@RegistrationActivity, it, Toast.LENGTH_LONG).show()
+                        auth.dismissError()
+                    }
+                    if (state.success) openCatalog()
+                }
+            }
+        }
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -126,7 +164,14 @@ class RegistrationActivity : AppCompatActivity() {
 
         continueButton.setOnClickListener { showPassword() }
         findViewById<ImageButton>(R.id.backButton).setOnClickListener { finish() }
+<<<<<<< HEAD
         findViewById<TextView>(R.id.signInLink).setOnClickListener { finish() }
+=======
+        findViewById<TextView>(R.id.signInLink).setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
         updateForm()
     }
 
@@ -144,7 +189,11 @@ class RegistrationActivity : AppCompatActivity() {
         fun updateForm() {
             password = passwordInput.text.toString()
             repeatedPassword = repeatInput.text.toString()
+<<<<<<< HEAD
             registerButton.isEnabled = AuthCheck.canRegister(password, repeatedPassword)
+=======
+            registerButton.isEnabled = AuthCheck.canRegister(password, repeatedPassword) && !auth.state.value.loading
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
             repeatInput.error = if (
                 repeatedPassword.isNotBlank() && password != repeatedPassword
             ) {
@@ -154,12 +203,27 @@ class RegistrationActivity : AppCompatActivity() {
             }
         }
 
+<<<<<<< HEAD
+=======
+        registerButton.setOnClickListener {
+            val date = birthDate ?: return@setOnClickListener
+            auth.register(RegistrationForm(login, name, password, email, date.atStartOfDay().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME),
+                if (gender == "female") 1 else 0))
+        }
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
         passwordInput.doAfterTextChanged { updateForm() }
         repeatInput.doAfterTextChanged { updateForm() }
         setupPasswordVisibility(passwordInput, R.id.newPasswordVisibility)
         setupPasswordVisibility(repeatInput, R.id.repeatPasswordVisibility)
         findViewById<ImageButton>(R.id.backButton).setOnClickListener { showDetails() }
+<<<<<<< HEAD
         findViewById<TextView>(R.id.signInLink).setOnClickListener { finish() }
+=======
+        findViewById<TextView>(R.id.signInLink).setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+>>>>>>> f28fb515fda31e350200026991c8dac75d392080
         updateForm()
     }
 
