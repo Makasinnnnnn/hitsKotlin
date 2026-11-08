@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lint>
+    <!-- Версии зависимостей зафиксированы; их плановое обновление не является ошибкой кода. -->
+    <issue id="GradleDependency,AndroidGradlePluginVersion,NewerVersionAvailable" severity="ignore" />
+</lint>

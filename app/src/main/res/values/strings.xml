@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Фильмус</string>
     <string name="brand_name">ФИЛЬМУС</string>
+    <string name="choice_title">Погрузись в мир кино</string>
+    <string name="choice_description">Мы предлагаем удобный и легкий способ насладиться любимыми фильмами прямо с Вашего мобильного устройства.</string>
+    <string name="choice_register">Регистрация</string>
     <string name="login_title">Вход</string>
     <string name="login_label">Логин</string>
     <string name="password_label">Пароль</string>

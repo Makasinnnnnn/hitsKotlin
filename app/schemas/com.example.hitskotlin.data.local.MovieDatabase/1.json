@@ -1,0 +1,249 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "6091fa146d42e1a2bb5b68ce90365e34",
+    "entities": [
+      {
+        "tableName": "cached_movies",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`owner` TEXT NOT NULL, `detailsLoaded` INTEGER NOT NULL, `id` TEXT NOT NULL, `name` TEXT NOT NULL, `poster` TEXT NOT NULL, `year` INTEGER NOT NULL, `country` TEXT NOT NULL, `genres` TEXT NOT NULL, `ratings` TEXT NOT NULL, `reviews` TEXT NOT NULL, `description` TEXT NOT NULL, `director` TEXT NOT NULL, `tagline` TEXT NOT NULL, `budget` TEXT NOT NULL, `fees` TEXT NOT NULL, `ageLimit` TEXT NOT NULL, `time` TEXT NOT NULL, PRIMARY KEY(`owner`, `id`))",
+        "fields": [
+          {
+            "fieldPath": "owner",
+            "columnName": "owner",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "detailsLoaded",
+            "columnName": "detailsLoaded",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "movie.id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "movie.name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "movie.poster",
+            "columnName": "poster",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "movie.year",
+            "columnName": "year",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "movie.country",
+            "columnName": "country",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "movie.genres",
+            "columnName": "genres",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "movie.ratings",
+            "columnName": "ratings",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "movie.reviews",
+            "columnName": "reviews",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "movie.description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "movie.director",
+            "columnName": "director",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "movie.tagline",
+            "columnName": "tagline",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "movie.budget",
+            "columnName": "budget",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "movie.fees",
+            "columnName": "fees",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "movie.ageLimit",
+            "columnName": "ageLimit",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "movie.time",
+            "columnName": "time",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "owner",
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "cached_pages",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`owner` TEXT NOT NULL, `pageNumber` INTEGER NOT NULL, `pageCount` INTEGER NOT NULL, `movieIds` TEXT NOT NULL, PRIMARY KEY(`owner`, `pageNumber`))",
+        "fields": [
+          {
+            "fieldPath": "owner",
+            "columnName": "owner",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pageNumber",
+            "columnName": "pageNumber",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pageCount",
+            "columnName": "pageCount",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "movieIds",
+            "columnName": "movieIds",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "owner",
+            "pageNumber"
+          ]
+        }
+      },
+      {
+        "tableName": "cached_favorites",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`owner` TEXT NOT NULL, `movieIds` TEXT NOT NULL, PRIMARY KEY(`owner`))",
+        "fields": [
+          {
+            "fieldPath": "owner",
+            "columnName": "owner",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "movieIds",
+            "columnName": "movieIds",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "owner"
+          ]
+        }
+      },
+      {
+        "tableName": "cached_profiles",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`owner` TEXT NOT NULL, `id` TEXT NOT NULL, `nickName` TEXT NOT NULL, `email` TEXT NOT NULL, `avatarLink` TEXT NOT NULL, `name` TEXT NOT NULL, `birthDate` TEXT NOT NULL, `gender` INTEGER NOT NULL, PRIMARY KEY(`owner`))",
+        "fields": [
+          {
+            "fieldPath": "owner",
+            "columnName": "owner",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "profile.id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "profile.nickName",
+            "columnName": "nickName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "profile.email",
+            "columnName": "email",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "profile.avatarLink",
+            "columnName": "avatarLink",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "profile.name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "profile.birthDate",
+            "columnName": "birthDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "profile.gender",
+            "columnName": "gender",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "owner"
+          ]
+        }
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6091fa146d42e1a2bb5b68ce90365e34')"
+    ]
+  }
+}

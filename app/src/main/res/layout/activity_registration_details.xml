@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/registrationRoot"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
     <ImageButton
         android:id="@+id/backButton"
@@ -19,6 +20,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:fontFamily="@font/inter"
+        android:includeFontPadding="false"
         android:id="@+id/brandTitle"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
@@ -41,64 +44,92 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/brandTitle">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/registrationForm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:paddingBottom="20dp">
+            android:paddingBottom="8dp">
 
             <TextView
-                android:layout_width="match_parent"
+                android:fontFamily="@font/inter"
+                android:includeFontPadding="false"
+                android:id="@+id/registrationTitle"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:gravity="center"
                 android:text="@string/registration_title"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:fontFamily="@font/inter"
+                android:includeFontPadding="false"
+                android:id="@+id/nameLabel"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:labelFor="@id/nameInput"
                 android:text="@string/name_label"
                 android:textColor="@color/white"
-                android:textSize="14sp" />
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/registrationTitle" />
 
             <EditText
+                android:fontFamily="@font/inter"
+                android:includeFontPadding="false"
                 android:id="@+id/nameInput"
-                android:autofillHints="name"
-                android:layout_width="match_parent"
-                android:layout_height="44dp"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="5dp"
+                android:autofillHints="name"
                 android:background="@drawable/bg_input"
                 android:inputType="textPersonName"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
                 android:singleLine="true"
                 android:textColor="@color/white"
-                android:textSize="16sp" />
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/nameLabel" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:fontFamily="@font/inter"
+                android:includeFontPadding="false"
+                android:id="@+id/genderLabel"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="@string/gender_label"
                 android:textColor="@color/white"
-                android:textSize="14sp" />
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/nameInput" />
 
             <RadioGroup
                 android:id="@+id/genderGroup"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="5dp"
                 android:background="#292929"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/genderLabel">
 
                 <RadioButton
+                    android:fontFamily="@font/inter"
+                    android:includeFontPadding="false"
                     android:id="@+id/maleOption"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -112,6 +143,8 @@
                     android:textSize="14sp" />
 
                 <RadioButton
+                    android:fontFamily="@font/inter"
+                    android:includeFontPadding="false"
                     android:id="@+id/femaleOption"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -125,70 +158,103 @@
             </RadioGroup>
 
             <TextView
-                android:layout_width="match_parent"
+                android:fontFamily="@font/inter"
+                android:includeFontPadding="false"
+                android:id="@+id/registrationLoginLabel"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:labelFor="@id/registrationLoginInput"
                 android:text="@string/login_label"
                 android:textColor="@color/white"
-                android:textSize="14sp" />
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/genderGroup" />
 
             <EditText
+                android:fontFamily="@font/inter"
+                android:includeFontPadding="false"
                 android:id="@+id/registrationLoginInput"
-                android:autofillHints="newUsername"
-                android:layout_width="match_parent"
-                android:layout_height="44dp"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="5dp"
+                android:autofillHints="newUsername"
                 android:background="@drawable/bg_input"
                 android:inputType="text"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
                 android:singleLine="true"
                 android:textColor="@color/white"
-                android:textSize="16sp" />
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/registrationLoginLabel" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:fontFamily="@font/inter"
+                android:includeFontPadding="false"
+                android:id="@+id/emailLabel"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:labelFor="@id/emailInput"
                 android:text="@string/email_label"
                 android:textColor="@color/white"
-                android:textSize="14sp" />
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/registrationLoginInput" />
 
             <EditText
+                android:fontFamily="@font/inter"
+                android:includeFontPadding="false"
                 android:id="@+id/emailInput"
-                android:autofillHints="emailAddress"
-                android:layout_width="match_parent"
-                android:layout_height="44dp"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="5dp"
+                android:autofillHints="emailAddress"
                 android:background="@drawable/bg_input"
                 android:inputType="textEmailAddress"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
                 android:singleLine="true"
                 android:textColor="@color/white"
-                android:textSize="16sp" />
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/emailLabel" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:fontFamily="@font/inter"
+                android:includeFontPadding="false"
+                android:id="@+id/birthDateLabel"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="@string/birth_date_label"
                 android:textColor="@color/white"
-                android:textSize="14sp" />
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/emailInput" />
 
             <FrameLayout
                 android:id="@+id/birthDateField"
-                android:layout_width="match_parent"
-                android:layout_height="44dp"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/bg_input"
                 android:clickable="true"
                 android:contentDescription="@string/birth_date_action"
-                android:focusable="true">
+                android:focusable="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/birthDateLabel">
 
                 <TextView
+                    android:fontFamily="@font/inter"
+                    android:includeFontPadding="false"
                     android:id="@+id/birthDateText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -208,19 +274,25 @@
             </FrameLayout>
 
             <Button
+                android:fontFamily="@font/inter_medium"
+                android:includeFontPadding="false"
                 android:id="@+id/continueButton"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_marginTop="16dp"
                 android:enabled="false"
                 android:text="@string/continue_button"
                 android:textAllCaps="false"
                 android:textColor="@color/login_button_text"
-                android:textSize="16sp"
+                android:textSize="15sp"
                 app:backgroundTint="@color/login_button_tint"
-                app:cornerRadius="6dp" />
-        </LinearLayout>
+        app:cornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/birthDateField" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
 
     <LinearLayout
         android:id="@+id/loginPrompt"
@@ -231,22 +303,29 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        >
 
         <TextView
+            android:fontFamily="@font/inter"
+            android:includeFontPadding="false"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:gravity="center_vertical"
             android:text="@string/already_registered"
             android:textColor="@color/white"
             android:textSize="14sp" />
 
         <TextView
+            android:fontFamily="@font/inter"
+            android:includeFontPadding="false"
             android:id="@+id/signInLink"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginStart="4dp"
             android:clickable="true"
             android:focusable="true"
+            android:gravity="center_vertical"
             android:text="@string/sign_in_link"
             android:textColor="@color/accent_pink"
             android:textSize="14sp" />

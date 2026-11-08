@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Публичный корень Sectigo для API, отсутствующий в старых версиях Android. -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="false">react-midterm.kreosoft.space</domain>
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="@raw/sectigo_r46" />
+        </trust-anchors>
+    </domain-config>
+</network-security-config>

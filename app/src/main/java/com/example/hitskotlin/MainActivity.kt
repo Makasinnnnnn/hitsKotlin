@@ -1,6 +1,16 @@
 package com.example.hitskotlin
 
 import android.os.Bundle
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import androidx.lifecycle.Lifecycle
+import kotlinx.coroutines.launch
+import android.view.View
+import com.example.hitskotlin.di.appContainer
+import com.example.hitskotlin.ui.viewmodel.LoginViewModel
+import com.example.hitskotlin.ui.openCatalog
+
 import android.content.Intent
 import android.text.SpannableString
 import android.text.Spanned
@@ -19,31 +29,61 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.widget.doAfterTextChanged
 
 class MainActivity : AppCompatActivity() {
+    private val auth by lazy {
+        ViewModelProvider(this, appContainer.loginFactory)[LoginViewModel::class.java]
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
         WindowCompat.getInsetsController(window, window.decorView).isAppearanceLightStatusBars = false
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            val visibleBars = insets.getInsets(
+                WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.ime()
+            )
+            v.setPadding(visibleBars.left, visibleBars.top, visibleBars.right, visibleBars.bottom)
             insets
         }
 
         val loginInput = findViewById<EditText>(R.id.loginInput)
         val passwordInput = findViewById<EditText>(R.id.passwordInput)
         val loginButton = findViewById<Button>(R.id.loginButton)
+        val loginError = findViewById<TextView>(R.id.loginError)
         val passwordVisibilityButton = findViewById<ImageButton>(R.id.passwordVisibilityButton)
 
         fun updateLoginButton() {
             loginButton.isEnabled = AuthCheck.canSubmitLogin(
                 loginInput.text.toString(),
                 passwordInput.text.toString()
-            )
+            ) && !auth.state.value.loading
         }
 
-        loginInput.doAfterTextChanged { updateLoginButton() }
-        passwordInput.doAfterTextChanged { updateLoginButton() }
+        loginButton.setOnClickListener {
+            loginError.visibility = View.GONE
+            auth.login(loginInput.text.toString(), passwordInput.text.toString())
+        }
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                auth.state.collect { state ->
+                    updateLoginButton()
+                    loginButton.text = if (state.loading) "Входим…" else getString(R.string.login_button)
+                    state.error?.let {
+                        loginError.text = it
+                        loginError.visibility = View.VISIBLE
+                        auth.dismissError()
+                    }
+                    if (state.success) openCatalog()
+                }
+            }
+        }
+        loginInput.doAfterTextChanged {
+            loginError.visibility = View.GONE
+            updateLoginButton()
+        }
+        passwordInput.doAfterTextChanged {
+            loginError.visibility = View.GONE
+            updateLoginButton()
+        }
 
         passwordVisibilityButton.setOnClickListener {
             val passwordIsHidden = passwordInput.transformationMethod is PasswordTransformationMethod
@@ -73,6 +113,7 @@ class MainActivity : AppCompatActivity() {
         }
         registerPrompt.setOnClickListener {
             startActivity(Intent(this, RegistrationActivity::class.java))
+            finish()
         }
     }
 
